@@ -23,6 +23,7 @@
             android:name=".coffeeshope"/>
 
     </activity>
+        <activity android:name=".SectionsPagerAdapter" />
 
 
     </application>
