@@ -1,6 +1,9 @@
-package com.example.enghaya.tourguideapp;
+package layout;
 
 import android.content.Context;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,14 +11,51 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.enghaya.tourguideapp.R;
+import com.example.enghaya.tourguideapp.information;
+
 import java.util.ArrayList;
+
+import static layout.supermarket.Name;
 
 /**
  * Created by ENG.HAYA on 8/21/2017 AD.
  */
 
-public class list extends BaseAdapter {
-    ArrayList<information> mydata;
+public class list extends FragmentPagerAdapter {
+
+    int numberpage = 4;
+    Context context;
+    String page[] = new String[]{
+            Name,
+            coffeeshope.Name,
+            CLINIC.Name,
+            UNVERSITY.Name};
+
+    public list(FragmentManager fm, Context context1) {
+
+        super(fm);
+        context = context1;
+    }
+
+
+
+
+
+    @Override
+    public int getCount() {
+        return numberpage;
+    }
+
+    @Override
+    public Fragment getItem(int position) {
+        return null;
+    }
+}
+
+
+
+   /* ArrayList<information> mydata;
     Context context;
 
     list(Context context) {
@@ -64,5 +104,5 @@ public class list extends BaseAdapter {
 
 
         return null;
-    }
-}
+    }}}
+*/

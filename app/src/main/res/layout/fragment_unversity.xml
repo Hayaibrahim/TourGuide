@@ -5,12 +5,19 @@
     tools:context="com.example.enghaya.tourguideapp.layout.UNVERSITY">
 
     <!-- TODO: Update blank fragment layout -->
-    <ListView
-        android:id="@+id/unversityid"
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycle"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <TextView
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+    <TextView
+        android:id="@+id/tabs1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/hello_blank_fragment" />
