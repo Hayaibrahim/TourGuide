@@ -19,11 +19,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
 
             </intent-filter>
-        <activity
+            <activity
+                android:name=".CLINIC"/>
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <activity
             android:name=".coffeeshope"/>
 
     </activity>
-        <activity android:name=".SectionsPagerAdapter" />
+        <activity
+            android:name=".supermarket"/>
+        <activity android:name=".UNVERSITY"/>
 
 
     </application>

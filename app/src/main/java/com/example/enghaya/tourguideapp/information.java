@@ -1,6 +1,9 @@
 package com.example.enghaya.tourguideapp;
 
+import android.content.Context;
 import android.widget.ArrayAdapter;
+
+import java.util.ArrayList;
 
 /**
  * Created by ENG.HAYA on 8/21/2017 AD.
@@ -12,11 +15,17 @@ public class information {
     String address ;
     String location ;
 
-    public information(String name, int image, String address, String location) {
+    public information(String name, String address, String location,  int image) {
         this.name = name;
-        this.image = image;
-        this.address = address;
+         this.address = address;
         this.location = location;
+        this.image = image;
+
+    }
+
+    public information(Context context, ArrayList<information> info) {
+
+
     }
 
     public String getName() {

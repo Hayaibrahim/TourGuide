@@ -7,8 +7,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import com.example.enghaya.tourguideapp.R;
+import com.example.enghaya.tourguideapp.information;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,8 +71,15 @@ public class supermarket extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_supermarket, container, false);
-    }
+        View show = inflater.inflate(R.layout.fragment_supermarket,container,false);
+        ArrayList<information> info = new ArrayList<>();
+        info.add( new information( "supermarket ","alrawabe","exit14",R.drawable.monuments ) );
+        ListView clinicname  = (ListView) show.findViewById(R.id.supermarketid);
+        information tourAdapter = new information(show.getContext(), info);
+        clinicname.setAdapter( (ListAdapter) tourAdapter );
+
+        return show;
+        }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

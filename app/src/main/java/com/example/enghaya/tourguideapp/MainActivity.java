@@ -17,8 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import layout.CLINIC;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,27 +65,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate( R.menu.menu_main, menu );
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected( item );
-    }
 
     /**
      * A placeholder fragment containing a simple view.
@@ -106,14 +91,7 @@ public class MainActivity extends AppCompatActivity {
             return fragment;
         }
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate( R.layout.fragment_main, container, false );
-            TextView textView = (TextView) rootView.findViewById( R.id.section_label );
-            textView.setText( getString( R.string.section_format, getArguments().getInt( ARG_SECTION_NUMBER ) ) );
-            return rootView;
-        }
+
     }
 
     /**
@@ -135,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
+            // Show 4 total pages.
             return 4;
         }
 
@@ -152,6 +130,53 @@ public class MainActivity extends AppCompatActivity {
                     return "COFFEE SHOP";
             }
             return null;
+        }
+    }
+
+    public void onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View rootView = inflater.inflate( R.layout.fragment_clinic, container, false );
+        PullToZoomListView listView = null;
+        String[] adapterData;
+
+        ListView clinicname = (ListView) findViewById( R.id.clinicid );
+        adapterData = new String[]{"Activity", "Service", "Content Provider", "Intent", "BroadcastReceiver",
+                "ADT", "Sqlite3", "HttpClient", "DDMS", "Android Studio", "Fragment", "Loader",
+                "ADT", "Sqlite3", "HttpClient", "DDMS", "Android Studio", "Fragment", "Loader"};
+        listView.setAdapter( new ArrayAdapter<>( MainActivity.this, android.R.layout.simple_list_item_1, adapterData ) );
+        listView.getHeaderView().setImageResource( R.drawable.paris );
+        listView.getHeaderView().setScaleType( ImageView.ScaleType.CENTER_CROP );
+        listView.setShadow( R.drawable.monuments );
+        listView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText( MainActivity.this, "click index:" + position, Toast.LENGTH_SHORT ).show();
+            }
+        } );
+
+    }
+
+    private class PullToZoomListView {
+        private ImageView headerView;
+        private int shadow;
+        private ArrayAdapter<String> adapter;
+
+        public ImageView getHeaderView() {
+            return headerView;
+        }
+
+        public void setOnItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
+
+
+        }
+
+        public void setShadow(int shadow) {
+            this.shadow = shadow;
+        }
+
+        public void setAdapter(ArrayAdapter<String> adapter) {
+            this.adapter = adapter;
         }
     }
 }

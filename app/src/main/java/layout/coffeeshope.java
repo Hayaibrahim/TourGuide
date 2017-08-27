@@ -7,8 +7,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import com.example.enghaya.tourguideapp.R;
+import com.example.enghaya.tourguideapp.information;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,7 +48,7 @@ public class coffeeshope extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment coffeeshope.
      */
-    // TODO: Rename and change types and number of parameters
+    //right TODO: Rename and change types and number of parameters
     public static coffeeshope newInstance(String param1, String param2) {
         coffeeshope fragment = new coffeeshope();
         Bundle args = new Bundle();
@@ -65,9 +70,18 @@ public class coffeeshope extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_coffeeshope, container, false);
+        View show = inflater.inflate(R.layout.fragment_coffeeshope,container,false);
+        ArrayList<information> info = new ArrayList<>();
+        info.add( new information( "coffee shope ","narjes","king khalid road",R.drawable.monuments ) );
+        ListView clinicname  = (ListView) show.findViewById(R.id.coffeeshopid);
+        information tourAdapter = new information(show.getContext(), info);
+        clinicname.setAdapter( (ListAdapter) tourAdapter );
+
+        return show;
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

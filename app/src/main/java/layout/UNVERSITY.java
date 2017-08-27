@@ -7,9 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.enghaya.tourguideapp.R;
+import com.example.enghaya.tourguideapp.information;
 
 import java.util.ArrayList;
 
@@ -25,13 +27,16 @@ public class UNVERSITY extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_supermarket, container, false);
+        View show = inflater.inflate(R.layout.fragment_unversity,container,false);
+        ArrayList<information> info = new ArrayList<>();
+        info.add( new information( "Unversity pnu","narjes","near airport king khalid international",R.drawable.monuments ) );
+        ListView clinicname  = (ListView) show.findViewById(R.id.universityid);
+        information tourAdapter = new information(show.getContext(), info);
+        clinicname.setAdapter( (ListAdapter) tourAdapter );
 
-        ArrayList<UNVERSITY> listContact = GetlistContact();
-        ListView lv = (ListView)getActivity().findViewById(R.id.supermarketid);
-
-        return rootView;
+        return show;
     }
+
 
     private ArrayList<UNVERSITY> GetlistContact(){
         ArrayList<UNVERSITY> contactlist = new ArrayList<UNVERSITY>();
