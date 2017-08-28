@@ -1,7 +1,5 @@
 package layout;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -31,12 +29,14 @@ public CLINIC(){
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View show = inflater.inflate(R.layout.fragment_clinic, container, false);
+        View show = inflater.inflate( R.layout.fragment_clinic, container, false );
+        ArrayList<information> info = new ArrayList<>();
 
-    ArrayList<information> info = new ArrayList<>();
-    info.add( new information( "clinic ","aljazerah","haron alrashed road",R.drawable.monuments ) );
-        ListView clinicname  = (ListView) show.findViewById(R.id.clinicid);
-        information tourAdapter = new information(show.getContext(), info);
+        info.add( new information(getString(R.string.loacationCLINIC)," ",getString( R.string. CLINIC )," " ,getString( R.string.CLINICaddress )));
+
+
+        ListView clinicname = (ListView) show.findViewById( R.id.coffeeshopid );
+        information tourAdapter = new information( show.getContext(), info );
         clinicname.setAdapter( (ListAdapter) tourAdapter );
 
         return show;

@@ -1,5 +1,6 @@
 package com.example.enghaya.tourguideapp;
 
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -19,8 +20,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import layout.CLINIC;
+import layout.UNVERSITY;
+import layout.coffeeshope;
+import layout.supermarket;
 
+public class MainActivity extends AppCompatActivity {
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -41,18 +46,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_main );
         // Get the ViewPager and set it's PagerAdapter so that it can display items
-        ViewPager viewPager = (ViewPager) findViewById(R.id.container);
+        ViewPager viewPager = (ViewPager) findViewById( R.id.container );
         FragmentPagerAdapter fragmentPagerAdapter =
-                new SectionsPagerAdapter(getSupportFragmentManager(),
-                        this);
-        viewPager.setAdapter(fragmentPagerAdapter);
+                new SectionsPagerAdapter( getSupportFragmentManager(),
+                        this );
+        viewPager.setAdapter( fragmentPagerAdapter );
 
         // Give the TabLayout the ViewPager
 
 
-
-
-    ListView listView = (ListView) findViewById( R.id.supermarketid );
+        ListView listView = (ListView) findViewById( R.id.supermarketid );
 
         Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar );
         setSupportActionBar( toolbar );
@@ -135,52 +138,4 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
-    }
-
-    public void onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate( R.layout.fragment_clinic, container, false );
-        PullToZoomListView listView = null;
-        String[] adapterData;
-
-        ListView clinicname = (ListView) findViewById( R.id.clinicid );
-        adapterData = new String[]{"Activity", "Service", "Content Provider", "Intent", "BroadcastReceiver",
-                "ADT", "Sqlite3", "HttpClient", "DDMS", "Android Studio", "Fragment", "Loader",
-                "ADT", "Sqlite3", "HttpClient", "DDMS", "Android Studio", "Fragment", "Loader"};
-        listView.setAdapter( new ArrayAdapter<>( MainActivity.this, android.R.layout.simple_list_item_1, adapterData ) );
-        listView.getHeaderView().setImageResource( R.drawable.paris );
-        listView.getHeaderView().setScaleType( ImageView.ScaleType.CENTER_CROP );
-        listView.setShadow( R.drawable.monuments );
-        listView.setOnItemClickListener( new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText( MainActivity.this, "click index:" + position, Toast.LENGTH_SHORT ).show();
-            }
-        } );
-
-    }
-
-    private class PullToZoomListView {
-        private ImageView headerView;
-        private int shadow;
-        private ArrayAdapter<String> adapter;
-
-        public ImageView getHeaderView() {
-            return headerView;
-        }
-
-        public void setOnItemClickListener(AdapterView.OnItemClickListener onItemClickListener) {
-
-
-        }
-
-        public void setShadow(int shadow) {
-            this.shadow = shadow;
-        }
-
-        public void setAdapter(ArrayAdapter<String> adapter) {
-            this.adapter = adapter;
-        }
-    }
-}
+    }}

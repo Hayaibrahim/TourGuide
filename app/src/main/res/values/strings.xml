@@ -1,8 +1,27 @@
 <resources>
+
+    //FOR ADDRESS COFFEE SAHOP
     <string name="app_name">Tour guide app</string>
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+     <string name="loacation"> jeeddah</string>
+     <string name="coffeename">coffeename</string>
+    <string name="coffeeaddress">Exit 9</string>
+
+
+    //FOR ADDRESS CLINIC
+    <string name="loacationCLINIC"> ALRYADH</string>
+    <string name="CLINIC">Dream clinic </string>
+    <string name="CLINICaddress">near alothaim mall</string>
+
+    //FOR ADDRESS CLINIC
+    <string name="loacationunversity"> ALRYADH</string>
+    <string name="university">princess norah unversity "pnu " </string>
+    <string name="unversityaddress">near king khalid Airport intrnational </string>
+
+    //FOR ADDRESS CLINIC
+    <string name="loacationsupermarket"> ALRYADH</string>
+    <string name="supermarket">lolo hyper </string>
+    <string name="supermarketaddress">Exit 14 </string>
+
 </resources>

@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+             android:id="@+id/root"
     tools:context="com.example.enghaya.tourguideapp.layout.UNVERSITY">
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,16 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-    <TextView
-        android:id="@+id/tabs1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+
 
     <ListView
         android:id="@+id/universityid"

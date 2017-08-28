@@ -10,23 +10,26 @@ import java.util.ArrayList;
  */
 
 public class information {
-    String name ;
-    int image ;
-    String address ;
-    String location ;
+    String name;
+    int image;
+    String address;
+    String location;
 
-    public information(String name, String address, String location,  int image) {
+    public information(String string, String s, String name, String address, String location) {
         this.name = name;
-         this.address = address;
+        this.address = address;
         this.location = location;
         this.image = image;
-
     }
-
     public information(Context context, ArrayList<information> info) {
 
+    }
+
+    public information(String string2, String s1, String string, String s, String string1, int de) {
+
 
     }
+
 
     public String getName() {
         return name;
@@ -59,6 +62,5 @@ public class information {
     public void setLocation(String location) {
         this.location = location;
     }
-
 
 }

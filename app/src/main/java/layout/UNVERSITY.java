@@ -1,7 +1,5 @@
 package layout;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -30,8 +28,11 @@ public class UNVERSITY extends Fragment {
 
         View show = inflater.inflate( R.layout.fragment_unversity, container, false );
         ArrayList<information> info = new ArrayList<>();
-        info.add( new information( "Unversity pnu", "narjes", "near airport king khalid international", R.drawable.monuments ) );
-        ListView clinicname = (ListView) show.findViewById( R.id.universityid );
+
+        info.add( new information(getString(R.string.loacationunversity)," ",getString( R.string. university   ),"" ,getString( R.string.unversityaddress ) ));
+
+
+        ListView clinicname = (ListView) show.findViewById( R.id.coffeeshopid );
         information tourAdapter = new information( show.getContext(), info );
         clinicname.setAdapter( (ListAdapter) tourAdapter );
 
