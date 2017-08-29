@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         // Give the TabLayout the ViewPager
 
 
-        ListView listView = (ListView) findViewById( R.id.supermarketid );
+        ListView listView = (ListView) findViewById( R.id.listmain );
 
         Toolbar toolbar = (Toolbar) findViewById( R.id.toolbar );
         setSupportActionBar( toolbar );
